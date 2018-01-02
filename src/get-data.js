@@ -1,3 +1,4 @@
+var js2xmlparser = require("js2xmlparser");
 
 class DataUtils {
 
@@ -12,22 +13,22 @@ class DataUtils {
     } else {
       start = start <= 0 ? 1 : start;
       limit = start + limit;
-
-      console.log('---------------------');
-      console.log('---------------------');
-      console.log(start);
-      console.log(limit);
-      console.log('---------------------');
-      console.log('---------------------');
-
-
       responseData = jsonData.slice(start, limit);
     }
 
     let jsonResponse = {
       success: true,
-      data: responseData
+      data: responseData,
+      total: jsonData.length
     };
+
+    if (type === 'json') {
+      //
+    } else if (type === 'xml') {
+      jsonResponse = js2xmlparser.parse("person", jsonResponse);
+    } else {
+      return 'invalid type';
+    }
 
     return jsonResponse;
   }
