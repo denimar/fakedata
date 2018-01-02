@@ -16,21 +16,15 @@ class DataUtils {
       responseData = jsonData.slice(start, limit);
     }
 
-    let jsonResponse = {
-      success: true,
-      data: responseData,
-      total: jsonData.length
-    };
-
     if (type === 'json') {
       //
     } else if (type === 'xml') {
-      jsonResponse = js2xmlparser.parse("person", jsonResponse);
+      responseData = js2xmlparser.parse("results", responseData);
     } else {
       return 'invalid type';
     }
 
-    return jsonResponse;
+    return responseData;
   }
 
 }
