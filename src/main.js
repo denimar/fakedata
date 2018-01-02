@@ -12,6 +12,9 @@ for (let i = 0 ; i < jsonsRoutes.length ; i++) {
     let jsonData = JSON.parse(rawdata);
 
     res.set('content-type', 'application/json')
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    
     res.send(DataUtils.getData(jsonData, req));
   });
 }
