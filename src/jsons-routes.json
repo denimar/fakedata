@@ -1,0 +1,14 @@
+[
+  {
+    "route": "/countries",
+    "json": "countries.json"
+  },
+  {
+    "route": "/dogs",
+    "json": "dogs.json"
+  },
+  {
+    "route": "/employees",
+    "json": "employees.json"
+  }
+]
