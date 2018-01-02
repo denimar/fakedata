@@ -11,9 +11,9 @@ class DataUtils {
     if (start === -1) {
       responseData = jsonData;
     } else {
-      start = start <= 1 ? 1 : start;
+      start = start <= 0 ? 0 : start;
       limit = start + limit;
-      responseData = jsonData.slice(start - 1, limit);
+      responseData = jsonData.slice(start, limit);
     }
 
     let jsonResponse = {
