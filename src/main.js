@@ -13,6 +13,6 @@ for (let i = 0 ; i < jsonsRoutes.length ; i++) {
   });
 }
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+app.listen(function () {
+  console.log('Example app listening!');
 });
