@@ -1,5 +1,5 @@
-var express = require('express');
-var app = express();
+let express = require('express');
+let app = express();
 const fs = require('fs');
 const jsonsRoutesStr = fs.readFileSync('./src/jsons-routes.json');
 const jsonsRoutes = JSON.parse(jsonsRoutesStr);
@@ -12,13 +12,14 @@ const jsonsRoutes = JSON.parse(jsonsRoutesStr);
 //     res.send(student);
 //   });
 // }
+app.use(express.static('./public'));
 
 app.get('/', function(req, res) {
+  res.set('content-type', 'text/html')
   res.send('testes aqui');
 });
 
-app.use(express.static('./public'));
-
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+let server = app.listen(8080, function () {
+  let port = server.address().port;
+  console.log('Example app listening on port ' + port + '!');
 });
