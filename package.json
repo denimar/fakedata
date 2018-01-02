@@ -2,9 +2,10 @@
   "name": "static-data",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/main.js",
   "scripts": {
     "start": "node src/main.js",
+    "web": "node src/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

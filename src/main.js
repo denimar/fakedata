@@ -1,5 +1,5 @@
-let express = require('express');
-let app = express();
+var express = require('express');
+var app = express();
 const fs = require('fs');
 const jsonsRoutesStr = fs.readFileSync('./src/jsons-routes.json');
 const jsonsRoutes = JSON.parse(jsonsRoutesStr);
@@ -19,7 +19,8 @@ app.get('/', function(req, res) {
   res.send('testes aqui');
 });
 
-let server = app.listen(8080, function () {
-  let port = server.address().port;
-  console.log('Example app listening on port ' + port + '!');
+
+var server = app.listen(process.env.PORT || 5000, function () {
+  var port = server.address().port;
+  console.log("Express is working on port " + port);
 });
