@@ -25,7 +25,7 @@ class DataUtils {
     if (type === 'json') {
       //
     } else if (type === 'xml') {
-      jsonResponse = js2xmlparser.parse("person", jsonResponse);
+      jsonResponse = js2xmlparser.parse("results", jsonResponse);
     } else {
       return 'invalid type';
     }
