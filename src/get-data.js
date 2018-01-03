@@ -16,11 +16,17 @@ class DataUtils {
       responseData = jsonData.slice(start, limit);
     }
 
-    let jsonResponse = {
-      success: true,
-      data: responseData,
-      total: jsonData.length
-    };
+    let jsonResponse = null;
+    if (req.url.indexOf('/tree/') !== -1) {
+      jsonResponse = responseData;
+    } else {
+      jsonResponse = {
+        success: true,
+        data: responseData,
+        total: jsonData.length
+      };
+    }
+
 
     if (type === 'json') {
       //
