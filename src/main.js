@@ -14,11 +14,12 @@ for (let i = 0 ; i < jsonsRoutes.length ; i++) {
     res.set('content-type', 'application/json')
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    
+
     res.send(DataUtils.getData(jsonData, req));
   });
 }
 app.use(express.static('public'));
+app.use('/images', express.static('data/images'));
 
 app.get('/', function(req, res) {
   res.send();
