@@ -76,6 +76,10 @@
     "json": "employees/50000.json"
   },
   {
+    "route": "/movies/7",
+    "json": "movies/00007.json"
+  },
+  {
     "route": "/movies/100",
     "json": "movies/00100.json"
   },
